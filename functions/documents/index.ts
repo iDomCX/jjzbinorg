@@ -24,12 +24,20 @@ SOFTWARE.
 
 import { Environment, HTTPError } from "../..";
 
-function generateId(size: number): string {
-  let id = "";
-  const keyspace = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+const randOf = (collection) => {
+  return () => {
+    return collection[Math.floor(Math.random() * collection.length)];
+  };
+};
 
-  for (let idx = 0; idx < size; idx++) {
-    id += keyspace.charAt(Math.random() * keyspace.length);
+function generateId(size: number): string {
+  const randVowel = randOf("aeiou");
+  const randConsonant = randOf("bcdfghjklmnpqrstvwxyz");
+  let id = "";
+  const start = Math.round(Math.random());
+
+  for (let i = 0; i < size; i++) {
+    id += i % 2 == start ? randConsonant() : randVowel();
   }
 
   return id;

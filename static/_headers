@@ -1,6 +1,6 @@
 https://:project.pages.dev/*
   X-Robots-Tag: noindex
-  Link: <https://haste.erisa.uk/:splat>; rel="canonical"
+  Link: <https://jjzbin.org/:splat>; rel="canonical"
 
 https://:commit.:project.pages.dev/*
-  Link: <https://haste.erisa.uk/:splat>; rel="canonical"
+  Link: <https://jjzbin.org/:splat>; rel="canonical"
